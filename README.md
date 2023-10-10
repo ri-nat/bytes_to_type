@@ -22,7 +22,7 @@ Add `bytes_to_type` to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-bytes_to_type = "0.1.0"
+bytes_to_type = "0.1.1"
 ```
 
 ## Example
@@ -34,10 +34,12 @@ use bytes_to_type::bytes_to_type;
 // pub fn bytes_to_u32(bytes: &[u8]) -> Result<Vec<u32>, anyhow::Error>
 bytes_to_type!(u32);
 
-let bytes = vec![1, 2, 3, 4, 5, 6, 7, 8];
-let result = bytes_to_u32(&bytes).expect("Failed to convert bytes to u32");
+fn main() {
+    let bytes = vec![1, 2, 3, 4, 5, 6, 7, 8];
+    let result = bytes_to_u32(&bytes).expect("Failed to convert bytes to u32");
 
-assert_eq!(result, vec![67305985, 134678021]);
+    assert_eq!(result, vec![67305985, 134678021]);    
+}
 ```
 
 ## License

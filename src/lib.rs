@@ -1,3 +1,5 @@
+pub use paste::paste;
+
 /// Provides a macro to generate a function converting byte slices to vectors of a specified type.
 ///
 /// The `bytes_to_type!` macro generates a conversion function that transforms a byte slice (`&[u8]`)
@@ -35,7 +37,7 @@
 #[macro_export]
 macro_rules! bytes_to_type {
     ($type:ty) => {
-        paste::paste! {
+        $crate::paste! {
             pub fn [<bytes_to_$type>](bytes: &[u8]) -> anyhow::Result<Vec<$type>> {
                 if bytes.len() % std::mem::size_of::<$type>() != 0 {
                     return Err(anyhow::anyhow!(
