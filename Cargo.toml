@@ -1,0 +1,20 @@
+[package]
+name = "bytes_to_type"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rinat Shaykhutdinov <mail@rinatshay.com>"]
+description = "A Rust library to facilitate byte conversion to specified types using macro generation."
+license = "MIT"
+repository = "https://github.com/ri-nat/bytes_to_type"
+documentation = "https://docs.rs/bytes_to_type"
+keywords = ["bytes", "conversion", "types", "macro"]
+categories = ["data-structures", "development-tools::macros"]
+readme = "README.md"
+
+[dependencies]
+anyhow = "1.0"
+paste = "1.0"
+
+# Used to configure settings related to creating documentation.
+[package.metadata.docs.rs]
+all-features = true
